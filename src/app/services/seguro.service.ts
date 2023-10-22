@@ -36,7 +36,7 @@ export class SegurosService {
       codigoSeguro
     }
     let params = new HttpParams()
-      .append("cedulaPersona", poliza.cedulaPersona.toString())
+      .append("cedula", poliza.cedulaPersona.toString())
       .append("Codigo", poliza.codigoSeguro.toString())
 
     const headers = new HttpHeaders().set('content-type', 'application/json')
@@ -46,5 +46,11 @@ export class SegurosService {
   setPolizas(poliza : SetPolizas): Observable<any>{
     const headers = new HttpHeaders().set('content-type', 'application/json')
     return this.httpclient.post<any>(this.urlBase + this.controladorSeguro + 'SetPoliza', poliza);
+  }
+
+  getExcel(): Observable<any> {   
+   
+    const headers = new HttpHeaders().set('content-type', 'application/json')
+    return this.httpclient.get<string>(this.urlBase + this.controladorSeguro + 'GetFormato');
   }
 }
