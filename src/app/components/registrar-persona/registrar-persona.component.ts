@@ -56,6 +56,10 @@ export class RegistrarPersonaComponent {
     const input = event.target;
     input.value = input.value.replace(/[^0-9]/g, '');
   }
+  filtrarLetras(event: any) {
+    const input = event.target;
+    input.value = input.value.replace(/[^a-zA-Z\s]/g, '');
+  }
 
   SetPersona() {
     if (this.validarDatos()) {

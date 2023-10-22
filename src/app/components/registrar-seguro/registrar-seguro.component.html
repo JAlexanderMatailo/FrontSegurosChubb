@@ -5,7 +5,8 @@
   
         <div class="form-floating mb-2 w-100 ">
           <input type="text" class="form-control" name="descripcion" id="floatingInput" [(ngModel)]="seguro.nombreSeguro"
-            placeholder="Descripción">
+          (input)="filtrarLetras($event)"  
+          placeholder="Descripción">
           <label for="floatingInput">Descripción</label>
         </div>
         <div class="form-floating mb-2 w-100 ">

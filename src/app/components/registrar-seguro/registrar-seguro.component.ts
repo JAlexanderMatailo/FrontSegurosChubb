@@ -98,6 +98,12 @@ export class RegistrarSeguroComponent {
       return false;
     }
   }
+
+  filtrarLetras(event: any) {
+    const input = event.target;
+    input.value = input.value.replace(/[^a-zA-Z\s]/g, '');
+  }
+
   dismissModal() {
     this.matDialog.closeAll();
   }

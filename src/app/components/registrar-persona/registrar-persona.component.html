@@ -13,6 +13,7 @@
         <div class="form-floating mb-2 w-100">
           <input type="text" class="form-control" name="nombre" id="floatingInput"
           [(ngModel)]="person.nombreCliente"
+          (input)="filtrarLetras($event)"
            placeholder="Nombre" >
           <label for="floatingInput">Nombre</label>
         </div>
