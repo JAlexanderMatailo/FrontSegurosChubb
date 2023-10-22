@@ -1,0 +1,36 @@
+<div class="content d-flex justify-content-center">
+    <div class="row justify-content-center">
+      <div class="col text-center">
+        <h1>{{titulo}}</h1>
+  
+        <div class="form-floating mb-2 w-100 ">
+          <input type="text" class="form-control" name="descripcion" id="floatingInput" [(ngModel)]="seguro.nombreSeguro"
+            placeholder="Descripción">
+          <label for="floatingInput">Descripción</label>
+        </div>
+        <div class="form-floating mb-2 w-100 ">
+            <input type="text" class="form-control" name="descripcion" id="floatingInput" 
+            [(ngModel)]="seguro.codigo"
+              placeholder="Codigo Seguro" maxlength="6">
+            <label for="floatingInput">Codigo Seguro</label>
+          </div>
+        <div class="form-floating mb-2 w-100 ">
+          <input type="number" class="form-control" name="valor" id="floatingInput" [(ngModel)]="seguro.sumaAsegurada"
+            placeholder="Valor asegurado">
+          <label for="floatingInput">Suma asegurada</label>
+        </div>
+        <div class="form-floating mb-2 w-100 ">
+          <input type="number" class="form-control" name="Prima" id="floatingInput" [(ngModel)]="seguro.prima"
+            placeholder="Prima">
+          <label for="floatingInput">Prima</label>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" (click)="dismissModal()">Cancelar</button>
+          <button class="btn btn-primary" (click)="setSeguro()">{{titulo}}
+  
+          </button>
+        </div>
+  
+      </div>
+    </div>
+  </div>

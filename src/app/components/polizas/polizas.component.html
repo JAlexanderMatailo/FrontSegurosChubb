@@ -1,0 +1,48 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-2 mt-1">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+      (click)="setPoliza()">
+        Registrar Poliza
+      </button>
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class="col-2 mt-1">
+      <input class="w-100 h-100" type="text" placeholder="Codigo Seguro"  [(ngModel)]="codigoSeguro" [ngModelOptions]="{standalone: true}" maxlength="6">
+    </div>
+    <div class="col-2 mt-1">
+      <input class="w-100 h-100" type="text" placeholder="Cédula"  [(ngModel)]="cedulaPersona" [ngModelOptions]="{standalone: true}" maxlength="10">
+    </div>
+    <div class="col-2 mt-1">
+      <button class="btn btn-warning" (click)="buscar()">Buscar</button>
+    </div>
+
+  </div>
+  
+
+  <table class="mt-2 table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Número Póliza</th>
+        <th scope="col">Cédula</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Código Seguro</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Prima</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of polizas">
+        <th scope="row">{{item.idPoliza}}</th>
+        <td>{{item.cedulaPersona}}</td>
+        <td>{{item.nombrePersona}}</td>
+        <td>{{item.codigoSeguro}}</td>
+        <td>{{item.descricionSeguro}}</td>
+        <td>{{item.prima | currency}}</td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>

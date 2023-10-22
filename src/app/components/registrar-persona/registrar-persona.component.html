@@ -1,0 +1,39 @@
+<div class="content d-flex justify-content-center">
+    <div class="row justify-content-center">
+      <div class="col text-center">
+        <h1>{{titulo}}</h1>
+  
+        <div class="form-floating mb-2 w-100 ">
+          <input type="text" class="form-control" name="cedula" id="floatingInput"  [(ngModel)]="person.cedula"
+          [(ngModel)]="person.cedula"
+          (input)="filtrarNumeros($event)" 
+          placeholder="cédula" maxlength="10">
+          <label for="floatingInput">Cédula</label>
+        </div>
+        <div class="form-floating mb-2 w-100">
+          <input type="text" class="form-control" name="nombre" id="floatingInput"
+          [(ngModel)]="person.nombreCliente"
+           placeholder="Nombre" >
+          <label for="floatingInput">Nombre</label>
+        </div>
+        <div class="form-floating mb-2 w-100">
+          <input type="text" class="form-control" name="telefono" id="floatingInput"
+          [(ngModel)]="person.telefono"          
+          (input)="filtrarNumeros($event)" 
+           placeholder="Telefono" maxlength="10">
+          <label for="floatingInput">Telefono</label>
+        </div>
+        <div class="form-floating mb-2 w-100">
+          <input type="number" class="form-control" name="edad" id="floatingInput"
+          [(ngModel)]="person.edad"
+          (input)="filtrarNumeros($event)" 
+           placeholder="Edad" maxlength="10">
+          <label for="floatingInput">Edad</label>
+        </div>
+        <div>
+          <button class="btn btn-secondary" (click)="dismissModal()">Cancelar</button>
+          <button class="btn btn-primary" (click)="SetPersona()">{{titulo}}</button>
+        </div>
+      </div>
+    </div>
+  </div>

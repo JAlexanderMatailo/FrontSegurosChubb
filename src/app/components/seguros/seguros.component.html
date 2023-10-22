@@ -1,0 +1,26 @@
+<div>
+    <button class="btn btn-primary" ><a class="nav-link" (click)="setSeguro()">Registrar Seguro</a></button>
+  </div>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Código</th>
+        <th scope="col">Valor Asegurado</th>
+        <th scope="col">Prima</th>
+        <th scope="col">Editar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of seguros">
+        <th scope="row">{{item.idSeguros}}</th>
+        <td>{{item.nombreSeguro}}</td>
+        <td>{{item.codigo}}</td>
+        <td>{{item.sumaAsegurada | currency}}</td>
+        <td>{{item.prima | currency}}</td>
+        <td><button class="btn btn-success"  (click)="editarSeguro(item)">Editar</button></td>
+      </tr>
+    </tbody>
+  </table>
+  
