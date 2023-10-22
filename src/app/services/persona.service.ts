@@ -20,7 +20,6 @@ export class PersonaService {
     return this.httpClient.get<any>(this.urlBase+this.controladorPersona+'GetAllPersona');
   }
   getPersonaByCedula(cedula: string|any):Observable<any>{
-    console.log(cedula);
     const params = new HttpParams().append('cedula', cedula.toString());
     let headers = new HttpHeaders()
     .set('Type-content','aplication/json')

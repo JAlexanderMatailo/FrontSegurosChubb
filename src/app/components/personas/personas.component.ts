@@ -30,7 +30,6 @@ export class PersonasComponent {
   getPersonas(){
     this.personas = []
     this.personaService.getAllPersonas().subscribe(resp=>{
-      console.log(resp)
       this.personas = resp
     });
   }
@@ -63,7 +62,6 @@ export class PersonasComponent {
   eliminarPersona(person : any){
     alert(person.idAsegurados)
     this.personaService.deletePersona(person).subscribe(resp=>{
-      
       if(resp){
         alert("Se elmino correctamente");
         this.ngOnInit();

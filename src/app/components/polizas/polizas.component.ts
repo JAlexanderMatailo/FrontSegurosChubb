@@ -40,7 +40,6 @@ export class PolizasComponent {
   getPolizas(){
     this.polizas = []
     this.seguroService.getPolizas("","").subscribe(resp=>{
-      console.log(resp)
       this.polizas = resp
     });
   }
@@ -48,7 +47,6 @@ export class PolizasComponent {
   buscar(){
       this.polizas = []
         this.seguroService.getPolizas(this.cedulaPersona,this.codigoSeguro).subscribe(resp=>{
-          console.log(resp)
           this.polizas = resp
         });
   }
